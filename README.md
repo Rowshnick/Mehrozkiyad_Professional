@@ -1,2 +1,2 @@
-# Mehrozkiyad_Professional
-Astrology-based Telegram Bot with healing and sigil generation (Mehrozkiyad)
+# Mehrozkiyad Professional
+Upload to Replit/GitHub/Render and run. See .env.example

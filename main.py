@@ -3,6 +3,21 @@ from keep_alive import run_keep_alive
 from admin_app import app as admin_app
 from models import init_db
 init_db()
+from flask import Flask
+import threading
+from bot import run_bot
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Mehrozkiyad Telegram Bot is running on Render!"
+
+# Run Telegram bot in background thread
+threading.Thread(target=run_bot, daemon=True).start()
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
 # start keep alive
 threading.Thread(target=run_keep_alive, daemon=True).start()
 # admin UI
